@@ -1,0 +1,144 @@
+    * { box-sizing: border-box; }
+    body { margin: 0; background-color: #121212; font-family: 'Noto Sans TC', sans-serif; color: white; }
+    .container { display: flex; min-height: 100vh; }
+    .sidebar {
+      flex: 2;
+      background-color: #1e1e1e;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .sidebar h2 { margin: 0 0 6px; font-size: 1rem; color: #ccc; }
+    .sidebar .username {
+      font-weight: bold; font-size: 1.2rem;
+      font-family: 'Courier New', monospace;
+      margin-bottom: 30px;
+    }
+    .sidebar button {
+      display: flex; justify-content: space-between;
+      align-items: center; width: 200px;
+      margin-bottom: 12px; padding: 10px 16px;
+      border: none; border-radius: 6px;
+      background-color: #fbece7; color: #e27b65;
+      font-weight: 600; cursor: pointer;
+      font-size: 1rem;
+    }
+    .sidebar button span:last-child { font-size: 1.2rem; color: #e27b65; }
+    .sidebar button.active { background-color: #e27b65; color: white; }
+    .sidebar button.active span:last-child { color: white; }
+    .main {
+      flex: 6.5;
+      padding: 50px 60px;
+      background-color: #f4f4f4;
+      color: black;
+      position: relative;
+    }
+    .main h2 { font-size: 1.4rem; font-weight: bold; margin-bottom: 20px; }
+    .main .top-action {
+      position: absolute;
+      top: 50px;
+      right: 60px;
+    }
+    .top-action button {
+      background-color: #e27b65;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .orders-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+    .order-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .order-card img {
+      width: 100%; height: 160px;
+      object-fit: cover; border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .order-card h4 { margin: 0 0 6px; font-size: 1.1rem; }
+    .order-card .date-status {
+      font-size: 0.85rem;
+      display: flex; justify-content: space-between;
+      margin-bottom: 8px;
+      color: #666;
+    }
+    .progress-bar-bg {
+      height: 8px; background: #eee;
+      border-radius: 4px; overflow: hidden;
+      margin: 12px 0;
+    }
+    .progress-bar {
+      height: 100%; background-color: #e74c3c;
+      width: 0%; transition: width 0.3s ease;
+    }
+    .order-card button {
+      margin-top: 8px; padding: 10px;
+      width: 100%; border: none;
+      border-radius: 6px; font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-primary { background-color: #d94444; color: white; }
+    .btn-secondary { background-color: #aaa; color: white; }
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal {
+      width: 520px;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      color: #333;
+    }
+    .modal h3 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .modal p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .modal label {
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .modal .modal-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .modal .modal-actions button {
+      flex: 1;
+      padding: 12px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .modal .back-btn { background-color: #888; color: white; }
+    .modal .confirm-btn { background-color: #d33; color: white; }
+    .modal .confirm-btn:disabled { background-color: #aaa; cursor: not-allowed; }

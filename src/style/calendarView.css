@@ -1,0 +1,397 @@
+/* ======= 通用設定 ======= */
+.popup-overlay,
+.notice-overlay,
+.calendar-overlay,
+.price-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.popup-box,
+.notice-popup-box,
+.calendar-popup-box,
+.price-popup-box {
+    position: relative;
+    background: #1e1e1e;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    animation: popup-fade-in 0.25s ease-out;
+    overflow-y: auto;
+}
+
+/* 彈窗容器 */
+#notice-popup,
+#calendar-popup,
+#price-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ======= Calendar 專用 ======= */
+.calendar-popup-box {
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    color: black;
+}
+
+.calendar-popup-box.styled-calendar {
+    width: 85%;
+    max-width: 900px;
+    display: flex;
+    background: #9696962d;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.calendar-left {
+    flex: 2;
+    padding: 30px;
+    background: #f9f9f9;
+}
+
+.calendar-right {
+    flex: 1;
+    background: #2e2f38;
+    color: #ff8a80;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.calendar-grid.days {
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.calendar-grid.days div {
+    padding: 10px 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.calendar-grid.days div:hover {
+    background: #ffe0e0;
+}
+
+.calendar-grid.days .scheduled {
+    background: #ff8a80;
+    color: white;
+}
+
+.calendar-grid.days .today {
+    border: 2px solid #ff8a80;
+}
+
+#calendar-close {
+    background: none;
+    color: #fff;
+    border: 1px solid #888;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ======= Notice 彈窗 ======= */
+.notice-popup-box {
+    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+    max-height: unset;
+    overflow-y: visible;
+}
+
+.notice-content {
+    max-height: unset;
+    overflow-y: unset;
+}
+
+.popup-title,
+.price-popup-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #fff;
+    text-align: center;
+}
+
+.popup-subtitle {
+    font-size: 1rem;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.popup-section {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 0.3em;
+    color: #ff8a80;
+}
+
+.notice-content p,
+.notice-content ul {
+    color: #eee;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.3em 0;
+}
+
+.notice-content ul {
+    padding-left: 1.2em;
+    list-style: disc;
+}
+
+.notice-content ul li {
+    margin-bottom: 0.4em;
+}
+
+/* ======= Price 彈窗 ======= */
+.price-popup-box {
+    padding: 30px;
+    width: 92%;
+    max-width: 750px;
+    max-height: 85vh;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.price-popup-box .price-section,
+.price-popup-box .price-note,
+.price-popup-box ul {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.price-section {
+    margin-bottom: 1.8em;
+}
+
+.price-section h3 {
+    font-size: 1.2rem;
+    color: #ff8a80;
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.4em;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    font-size: 0.95rem;
+}
+
+.price-table td {
+    padding: 8px 10px;
+    border-bottom: 1px dashed #444;
+    vertical-align: top;
+    color: #eee;
+}
+
+.price-table td:first-child {
+    width: 48%;
+    font-weight: bold;
+    color: #fff;
+}
+
+.price-note {
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-top: 0.4em;
+}
+
+/* ======= 按鈕樣式統一 ======= */
+.confirm-btn,
+#price-close {
+    display: block;
+    margin: 1.5em auto 0;
+    padding: 10px 22px;
+    background: #ff8a80;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover,
+#price-close:hover {
+    background: #ff6666;
+}
+
+#contract-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.contract-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.contract-popup-box {
+    position: relative;
+    background: #fefefe;
+    color: #333;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    animation: popup-fade-in 0.25s ease-out;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.contract-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.2em;
+    color: #222;
+}
+
+.contract-terms {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2em 0;
+}
+
+.contract-terms li {
+    margin-bottom: 0.8em;
+    line-height: 1.5;
+}
+
+.contract-terms input[type="checkbox"] {
+    margin-right: 0.5em;
+    transform: scale(1.1);
+}
+
+.contract-warning {
+    color: #d9534f;
+    font-weight: bold;
+    margin-bottom: 1.2em;
+    text-align: center;
+}
+
+.contract-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 24px;
+    border-radius: 6px;
+    border: none;
+    background: #aaa;
+    color: #fff;
+    font-weight: bold;
+    cursor: not-allowed;
+    transition: background 0.3s;
+}
+
+.contract-btn.active {
+    background: #ff8a80;
+    cursor: pointer;
+}
+
+.contract-btn.active:hover {
+    background: #ff6666;
+}
+
+.arrow {
+    font-size: 1.8rem;
+    margin: 0 30px;
+    color: #ff8a80;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.arrow:hover {
+    transform: scale(1.2);
+    color: #ff4444;
+}
+
+.arrow:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+/* ======= 動畫效果 ======= */
+@keyframes popup-fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popup-fade-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+}
+
+.animate-popup {
+    animation: popup-fade-in 0.25s ease-out;
+}
+
+.animate-close {
+    animation: popup-fade-out 0.2s ease-in forwards;
+}

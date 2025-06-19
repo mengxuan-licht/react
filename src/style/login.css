@@ -1,0 +1,218 @@
+/* =================== 登入視窗 =================== */
+.login-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.login-modal-box {
+  background-color: #1e1e1e;
+  padding: 32px 24px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  min-width: 320px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.login-modal-box h2 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.login-modal-box input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: #f0f4ff;
+}
+
+.login-modal-box button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.login-modal-box button:first-of-type {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.login-modal-box button:first-of-type:hover {
+  background-color: #574fd3;
+}
+
+.login-modal-box button:last-of-type {
+  background-color: #333;
+  color: white;
+}
+
+.login-modal-box button:last-of-type:hover {
+  background-color: #555;
+}
+
+.login-modal-box button+button {
+  margin-top: 8px;
+}
+
+.login-modal-overlay.fade-in {
+  opacity: 1;
+}
+
+.login-modal-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.login-modal-box {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.login-modal-overlay.fade-in .login-modal-box {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.login-modal-overlay.fade-out .login-modal-box {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+/* =================== 註冊視窗 =================== */
+.register-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.register-modal-box {
+  background-color: #1e1e1e;
+  padding: 32px;
+  border-radius: 16px;
+  color: white;
+  width: 340px;
+  max-width: 90vw;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.register-modal-box h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.register-modal-box input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #f0f4ff;
+  font-size: 1rem;
+}
+
+.register-modal-box button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.register-modal-box button:first-of-type {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.register-modal-box button:first-of-type:hover {
+  background-color: #574fd3;
+}
+
+.register-modal-box button:last-of-type {
+  background-color: #333;
+  color: white;
+}
+
+.register-modal-box button:last-of-type:hover {
+  background-color: #555;
+}
+
+.register-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.register-modal-overlay.fade-in {
+  opacity: 1;
+}
+
+.register-modal-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.form-wrapper {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,107 @@
+/* ✅ 所有樣式統一限制在 .orders-list-wrapper 內 */
+.orders-list-wrapper .orders-filter-bar {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.orders-list-wrapper .orders-filter-bar input[type="date"] {
+  padding: 0.3em 0.6em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9em;
+  margin: 0 0.3em;
+}
+
+.orders-list-wrapper .orders-filter-bar button {
+  background-color: #e57373;
+  color: white;
+  font-weight: bold;
+  padding: 0.4em 1em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.orders-list-wrapper .orders-filter-bar button:hover {
+  background-color: #c62828;
+}
+
+.orders-list-wrapper .orders-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.orders-list-wrapper .order-card {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.2em;
+  transition: box-shadow 0.3s;
+}
+
+.orders-list-wrapper .order-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.orders-list-wrapper .order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  color: #666;
+}
+
+.orders-list-wrapper .order-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.6em;
+  color: #222;
+}
+
+.orders-list-wrapper .order-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 0.5em 0;
+}
+
+.orders-list-wrapper .order-detail-btn {
+  text-align: right;
+  font-weight: bold;
+  color: #d32f2f;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.orders-list-wrapper .order-detail-btn:hover {
+  color: #b71c1c;
+}
+
+/* ✅ fettle 標籤色彩仍可保留共用 */
+.fettle-tag {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fettle-未讀      { background-color: #757575; color: white; }
+.fettle-已讀      { background-color: #90caf9; color: #000; }
+.fettle-溝通中    { background-color: #d4e081; color: #000; }
+.fettle-報價      { background-color: #ffee58; color: #000; }
+.fettle-合約      { background-color: #a1887f; color: white; }
+.fettle-訂金已繳  { background-color: #81c784; color: #000; }
+.fettle-草圖      { background-color: #4db6ac; color: #000; }
+.fettle-確認草圖  { background-color: #64b5f6; color: #000; }
+.fettle-工作階段中 { background-color: #9575cd; color: white; }
+.fettle-繪製中    { background-color: #f06292; color: white; }
+.fettle-最終階段  { background-color: #e57373; color: white; }
+.fettle-完稿交付  { background-color: #fff054; color: #000; }
+.fettle-棄單      { background-color: #dbdbdb; color: black; }

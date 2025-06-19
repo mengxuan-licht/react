@@ -1,0 +1,290 @@
+/* 全域設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #121212;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: white;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 側欄樣式 */
+.sidebar {
+    flex: 2.5;
+    background-color: #1e1e1e;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar h2 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.sidebar .username {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 30px;
+}
+
+.sidebar button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    margin-bottom: 12px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #fbece7;
+    color: #e27b65;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar button span:last-child {
+    font-size: 1.2rem;
+    color: #e27b65;
+}
+
+.sidebar button.active {
+    background-color: #e27b65;
+    color: white;
+}
+
+.sidebar button.active span:last-child {
+    color: white;
+}
+
+/* 主內容樣式 */
+.main {
+    padding: 50px 60px;
+    background-color: #f4f4f4;
+    color: black;
+}
+
+.main h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 表單容器 */
+.form-wrapper {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    width: 75%;
+    min-width: 540px;
+}
+
+/* 3:6 雙欄結構 */
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.label-col {
+    width: 120px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    padding-top: 10px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.input-col {
+    flex: 1;
+}
+
+.input-col input,
+.input-col select,
+.input-col textarea {
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    color: #333;
+    display: block;
+}
+
+/* 統一 disabled 樣式 */
+.input-col input:disabled,
+.input-col select:disabled,
+.input-col textarea:disabled {
+    background-color: #f0f0f0;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* textarea 調整高度 */
+.input-col textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* 下拉選單箭頭 */
+.input-col select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='gray' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+}
+
+/* 表單按鈕 */
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+    align-items: center;
+    /* 置中對齊 */
+    gap: 12px;
+    /* 按鈕間距 */
+    margin-top: 30px;
+}
+
+
+.back-btn {
+    padding: 10px 30px;
+    background-color: #999;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #777;
+}
+
+/* ✅ 確認修改按鈕樣式（全域有效） */
+.confirm-btn {
+    padding: 10px 30px;
+    background-color: #e27b65;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #cf6a55;
+}
+
+.custom-btn {
+    background-color: #c16257;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin: 0 5px;
+}
+
+.custom-btn:hover {
+    background-color: #a74f45;
+}
+
+.custom-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.schedule-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.schedule-actions button {
+    flex: 1;
+}
+
+.unread-row {
+    background-color: #fff2f2;
+}
+
+#ymFilter {
+    padding: 6px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    margin-left: 10px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-container h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 響應式 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar,
+    .main {
+        width: 100%;
+        align-items: center;
+    }
+
+    .sidebar-content {
+        align-items: center;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .label-col {
+        text-align: left;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 6px;
+    }
+
+
+}

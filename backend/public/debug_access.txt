@@ -1,0 +1,8 @@
+user=test
+actions=Array
+(
+    [0] => view_orders
+    [1] => create_orders
+    [2] => edit_orders
+    [3] => edit_orders
+)

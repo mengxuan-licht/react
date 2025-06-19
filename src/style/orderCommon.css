@@ -1,0 +1,266 @@
+/* ✅ 表格樣式：給 admin 管理、行事曆、清單頁用 */
+.custom-table {
+  width: 90%;
+  margin: 1.5em auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 0.9em 1.2em;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 0.95em;
+}
+
+.custom-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #333;
+}
+
+.custom-table tr:hover {
+  background-color: #fafafa;
+}
+
+.custom-table td:last-child {
+  text-align: left;
+}
+.action-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ✅ 共用狀態標籤 fettle 樣式 */
+.fettle-tag {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fettle-未讀 {
+  background-color: #757575;
+  color: white;
+}
+
+.fettle-已讀 {
+  background-color: #90caf9;
+  color: #000;
+}
+
+.fettle-溝通中 {
+  background-color: #d4e081;
+  color: #000;
+}
+
+.fettle-報價 {
+  background-color: #ffee58;
+  color: #000;
+}
+
+.fettle-合約 {
+  background-color: #a1887f;
+  color: white;
+}
+
+.fettle-訂金已繳 {
+  background-color: #81c784;
+  color: #000;
+}
+
+.fettle-草圖 {
+  background-color: #4db6ac;
+  color: #000;
+}
+
+.fettle-確認草圖 {
+  background-color: #64b5f6;
+  color: #000;
+}
+
+.fettle-工作階段中 {
+  background-color: #9575cd;
+  color: white;
+}
+
+.fettle-繪製中 {
+  background-color: #f06292;
+  color: white;
+}
+
+.fettle-最終階段 {
+  background-color: #e57373;
+  color: white;
+}
+
+.fettle-完稿交付 {
+  background-color: #fff054;
+  color: #000;
+}
+
+.fettle-棄單 {
+  background-color: #dbdbdb;
+  color: black;
+}
+
+/* ✅ 表單用共用容器樣式（給 admin/user 用） */
+.order-form-container {
+  max-width: 700px;
+  margin: auto;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.order-form-container label {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-form-container input,
+.order-form-container select,
+.order-form-container textarea {
+  width: 100%;
+  padding: 0.6em;
+  margin-top: 0.3em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95em;
+  background-color: #fafafa;
+}
+
+.order-form-container input[readonly],
+.order-form-container textarea[readonly] {
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+.unblock-btn {
+  background-color: #ffffff;
+  color: #b22222;
+  border: 1px solid #b22222;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.unblock-btn:hover {
+  background-color: #ffecec;
+}
+
+.status-bar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.98);
+  background: #1e1e1e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.status-bar.success {
+  background: #4caf50;
+}
+
+.status-bar.error {
+  background: #e53935;
+}
+
+.status-bar.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+#status-bar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.98);
+  background: #1e1e1e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: 9999;
+  transition: all 0.25s ease;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+#status-bar.success {
+  background-color: #4caf50;
+}
+
+#status-bar.error {
+  background-color: #e53935;
+}
+
+#status-bar.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.form-actions-row {
+  display: flex;
+  justify-content: space-between;
+  /* 左右靠邊 */
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.form-actions-row button {
+  min-width: 120px;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background: #e88c84;
+  color: #fff;
+}
+
+.confirm-btn:hover {
+  background: #d87070;
+}
+
+.back-btn {
+  background: #999;
+  color: #fff;
+}
+
+.back-btn:hover {
+  background: #777;
+}
+
+.highlight-row {
+  background-color: #fff4e6;
+  /* 溫和的橘黃色背景 */
+}
